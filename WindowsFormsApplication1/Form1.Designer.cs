@@ -41,7 +41,7 @@
             // 
             this.grid1.CellSize = 30;
             this.grid1.ColumnCount = 3;
-            this.grid1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.grid1.LineColor = System.Drawing.Color.Red;
             this.grid1.Location = new System.Drawing.Point(394, 37);
             this.grid1.Name = "grid1";
             this.grid1.RowCount = 5;
