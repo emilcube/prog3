@@ -26,5 +26,15 @@ namespace WindowsFormsApplication1
         {
             MessageBox.Show(sender.ToString());
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void redButton1_Click(object sender, EventArgs e)
+        {
+            redButton1.Crossed ^= true;
+        }
     }
 }
