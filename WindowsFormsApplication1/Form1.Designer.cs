@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.redButton1 = new WindowsFormsApplication1.RedButton();
             this.userControl13 = new WindowsFormsApplication1.UserControl1();
             this.userControl12 = new WindowsFormsApplication1.UserControl1();
             this.userControl11 = new WindowsFormsApplication1.UserControl1();
             this.SuspendLayout();
+            // 
+            // redButton1
+            // 
+            this.redButton1.BackColor = System.Drawing.Color.Red;
+            this.redButton1.Location = new System.Drawing.Point(298, 261);
+            this.redButton1.Name = "redButton1";
+            this.redButton1.Size = new System.Drawing.Size(75, 75);
+            this.redButton1.TabIndex = 3;
+            this.redButton1.Text = "redButton1";
             // 
             // userControl13
             // 
@@ -64,6 +74,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 409);
+            this.Controls.Add(this.redButton1);
             this.Controls.Add(this.userControl13);
             this.Controls.Add(this.userControl12);
             this.Controls.Add(this.userControl11);
@@ -78,6 +89,7 @@
         private UserControl1 userControl11;
         private UserControl1 userControl12;
         private UserControl1 userControl13;
+        private RedButton redButton1;
     }
 }
 
