@@ -50,16 +50,7 @@ namespace WindowsFormsApplication1
        
 
 
-            for (int i = 1; i < cols + 1; i++)
-                for (int j = 0; j < rows + 1; j++)
-                    g.DrawString
-                    (
-                        Convert.ToString(data[i, j]),
-                        Font, // шрифт, выбранный в дизайнере
-                        Brushes.Black, // цвет цифр
-                        i * cellSize + p.Width / 4 - 3 * cellSize / 4,
-                        j * cellSize - p.Width - 3 * cellSize / 4 // координаты надписи
-                    );
+     
         }
 
 
@@ -171,7 +162,15 @@ namespace WindowsFormsApplication1
             }
         }
 
-
+        public delegate void CellHandler(Object sender, int row, int column);
+        public event CellHandler CellClick;
+        protected override void OnMouseClick(MouseEventArgs e)
+        {
+            base.OnMouseClick(e);
+            if (CellClick != null)
+                for (int i = 0; i < e.Clicks; i++)
+                    CellClick(this, e.X / cellSize + 1, e.Y / cellSize + 1);
+        }
 
 
     }

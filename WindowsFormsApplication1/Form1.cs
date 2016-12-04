@@ -35,6 +35,17 @@ namespace WindowsFormsApplication1
         private void redButton1_Click(object sender, EventArgs e)
         {
             redButton1.Crossed ^= true;
+            int number;
+            Random r = new Random();
+            number = r.Next(0, 4);
+            grid1[r.Next(1, grid1.ColsCount + 1), r.Next(1, grid1.RowsCount + 1)] = number;
         }
+
+        private void grid1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

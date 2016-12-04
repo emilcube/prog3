@@ -45,6 +45,7 @@
             this.grid1.Size = new System.Drawing.Size(363, 263);
             this.grid1.TabIndex = 6;
             this.grid1.Text = "grid1";
+            this.grid1.Click += new System.EventHandler(this.grid1_Click);
             // 
             // redButton1
             // 
