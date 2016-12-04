@@ -80,21 +80,38 @@ namespace WindowsFormsApplication1
             }
         }
 
+        public int this[int i, int j]
+        {
+            get
+            {
+                if (i < rows && i >= 0 && j < cols && j >= 0)
+                    return data[i, j];
+                else
+                    return -1;
+            }
+            set
+            {
+                if (i < rows && i >= 0 && j < cols && j >= 0)
+                {
+                    data[i, j] = value;
+                    Invalidate();
+                }
+            }
+        }
+
         [Category("Cells lines")
- 
-         DefaultValue("Black")
- 
-         Description("This is the color of the cell's lines.")]
+         DefaultValue("Red")
+        ]
         public Color LineColor { get { return p.Color; } set { p.Color = value; } }
 
         [Category("Cells width")
          DefaultValue("3")
-         Description("This is the width of the cell's lines.")]
+        ]
         public float CellWidth { get { return p.Width; } set { p.Width = value; } }
 
         [Category("Rows count")
          DefaultValue("5")
-         Description("This is the count of the cell's rows.")]
+        ]
         public int RowsCount
         {
             get { return rows; }
