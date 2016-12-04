@@ -35,12 +35,12 @@
             // grid1
             // 
             this.grid1.CellSize = 30;
-            this.grid1.ColumnCount = 3;
+            this.grid1.ColsCount = 3;
             this.grid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grid1.LineColor = System.Drawing.Color.Red;
             this.grid1.Location = new System.Drawing.Point(12, 58);
             this.grid1.Name = "grid1";
-            this.grid1.RowCount = 5;
+            this.grid1.RowsCount = 5;
             this.grid1.Size = new System.Drawing.Size(363, 245);
             this.grid1.TabIndex = 6;
             this.grid1.Text = "grid1";
@@ -49,11 +49,11 @@
             // 
             this.redButton1.BackColor = System.Drawing.Color.Red;
             this.redButton1.Crossed = false;
-            this.redButton1.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.redButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.redButton1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.redButton1.Location = new System.Drawing.Point(32, 309);
             this.redButton1.Name = "redButton1";
-            this.redButton1.Size = new System.Drawing.Size(320, 82);
+            this.redButton1.Size = new System.Drawing.Size(343, 82);
             this.redButton1.TabIndex = 3;
             this.redButton1.Text = "RANDOM";
             this.redButton1.UseVisualStyleBackColor = false;

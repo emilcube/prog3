@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
             if (Crossed)
             {
                 Graphics g = pe.Graphics;
-                Pen p = new Pen(Color.Yellow, 3);
+                Pen p = new Pen(Color.Orange, 5);
                 g.DrawLine(p, 0, 0, this.Width, this.Height);
                 g.DrawLine(p, 0, this.Height, this.Width, 0);
             }

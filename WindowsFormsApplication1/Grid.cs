@@ -13,27 +13,33 @@ namespace WindowsFormsApplication1
 {
     public partial class Grid : Control
     {
+        Pen p = new Pen(Color.Red, 3);
+        int[,] data;
+        int rows = 5, cols = 3, cellSize = 30;
+
         public Grid()
         {
             InitializeComponent();
+            data = new int[1000, 1000];
+
         }
 
-        public Color LineColor { get; set; }
+        //public Color LineColor { get; set; }
 
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
             Graphics g = pe.Graphics;
-            Pen p = new Pen(LineColor, 3);
+            //Pen p = new Pen(LineColor, 3);
 
             for (int i = 0; i <= rows * cellSize; i += cellSize)
             {
-                pe.Graphics.DrawLine(p, 0, i, cols * cellSize, i);
+                g.DrawLine(p, 0, i, cols * cellSize, i);
             }
 
             for (int i = 0; i <= cols * cellSize; i += cellSize)
             {
-                pe.Graphics.DrawLine(p, i, 0, i, rows * cellSize);
+               g.DrawLine(p, i, 0, i, rows * cellSize);
             }
 
             for(int i=0;i<rows;i++)
@@ -46,30 +52,100 @@ namespace WindowsFormsApplication1
                 }
         }
 
-            int rows = 5, cols = 3, cellSize = 30;
-        public int RowCount
-        {
-            get { return rows; }
-            set { rows = value; Invalidate(); }
-        }
 
-        public int ColumnCount
-        {
-            get { return cols; }
-            set { cols = value; Invalidate(); }
-        }
+        //public int RowCount
+        //{
+        //    get { return rows; }
+        //    set { rows = value; Invalidate(); }
+        //}
 
-        public int CellSize
-        {
-            get { return cellSize; }
-            set { cellSize = value; Invalidate(); }
-        }
+        //public int ColumnCount
+        //{
+        //    get { return cols; }
+        //    set { cols = value; Invalidate(); }
+        //}
 
-        int[,] data = new int[1000, 1000];
+        //public int CellSize
+        //{
+        //    get { return cellSize; }
+        //    set { cellSize = value; Invalidate(); }
+        //}
 
         public void SetCell(int i, int j, int value)
         {
-            data[i, j] = value;
+            if (i < cols + 1 && i >= 0 && j < rows + 1 && j >= 0)
+            {
+                data[i, j] = value;
+                Invalidate();
+            }
         }
+
+        [Category("Cells lines")
+ 
+         DefaultValue("Black")
+ 
+         Description("This is the color of the cell's lines.")]
+        public Color LineColor { get { return p.Color; } set { p.Color = value; } }
+
+        [Category("Cells width")
+         DefaultValue("3")
+         Description("This is the width of the cell's lines.")]
+        public float CellWidth { get { return p.Width; } set { p.Width = value; } }
+
+        [Category("Rows count")
+         DefaultValue("5")
+         Description("This is the count of the cell's rows.")]
+        public int RowsCount
+        {
+            get { return rows; }
+            set
+            {
+                if (value > 0)
+                {
+                    rows = value;
+                    Invalidate();
+                }
+                else
+                    throw new Exception();
+            }
+        }
+        [Category("Cols count")
+         DefaultValue("3")
+         Description("This is the count of the cell's cols.")]
+        public int ColsCount
+        {
+            get { return cols; }
+            set
+            {
+                if (value > 0)
+                {
+                    cols = value;
+                    Invalidate();
+                }
+                else
+                    throw new Exception();
+            }
+        }
+        [Category("Cell size")
+         DefaultValue("100")
+         Description("This is the size of the cells.")]
+        public int CellSize
+        {
+            get { return cellSize; }
+            set
+            {
+                if (value > 0)
+                {
+                    cellSize = value;
+                    Invalidate();
+                }
+                else
+                    throw new Exception();
+            }
+        }
+
+
+
+
     }
 }
