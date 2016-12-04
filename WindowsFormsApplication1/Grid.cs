@@ -32,24 +32,34 @@ namespace WindowsFormsApplication1
             Graphics g = pe.Graphics;
             //Pen p = new Pen(LineColor, 3);
 
-            for (int i = 0; i <= rows * cellSize; i += cellSize)
-            {
-                g.DrawLine(p, 0, i, cols * cellSize, i);
-            }
+            //for (int i = 0; i <= rows * cellSize; i += cellSize)
+            //{
+            //    g.DrawLine(p, 0, i, cols * cellSize, i);
+            //}
 
-            for (int i = 0; i <= cols * cellSize; i += cellSize)
-            {
-               g.DrawLine(p, i, 0, i, rows * cellSize);
-            }
+            //for (int i = 0; i <= cols * cellSize; i += cellSize)
+            //{
+            //   g.DrawLine(p, i, 0, i, rows * cellSize);
+            //}
 
-            for(int i=0;i<rows;i++)
-                for(int j=0;j<cols; j++)
-                {
-                    g.DrawString(Convert.ToString(0),
-                    Font,
-                    Brushes.Black,
-                    j*cellSize + cellSize/3, i*cellSize + cellSize / 3);
-                }
+            for (int i = 0; i < cols + 1; i++)
+                g.DrawLine(p, i * cellSize + p.Width / 2, 0 + p.Width / 2, i * cellSize + p.Width / 2, cellSize * rows + p.Width);
+
+            for (int i = 0; i < rows + 1; i++)
+                g.DrawLine(p, 0, i * cellSize + p.Width / 2, cellSize * cols + p.Width, i * cellSize + p.Width / 2);
+       
+
+
+            for (int i = 1; i < cols + 1; i++)
+                for (int j = 0; j < rows + 1; j++)
+                    g.DrawString
+                    (
+                        Convert.ToString(data[i, j]),
+                        Font, // шрифт, выбранный в дизайнере
+                        Brushes.Black, // цвет цифр
+                        i * cellSize + p.Width / 4 - 3 * cellSize / 4,
+                        j * cellSize - p.Width - 3 * cellSize / 4 // координаты надписи
+                    );
         }
 
 
