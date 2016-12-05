@@ -15,12 +15,16 @@ namespace WindowsFormsApplication1
     {
         Pen p = new Pen(Color.Red, 3);
         int[,] data;
-        int rows = 5, cols = 3, cellSize = 30;
+        int rows, cols, cellSize;
+        public enum GridDisplayMode { Colors, Numbers, NumberAndColors };
+        public GridDisplayMode DisplayMode { get; set; }
+        public Color[] Colors { get; set; }
 
         public Grid()
         {
             InitializeComponent();
             data = new int[1000, 1000];
+            rows = 5; cols = 3; cellSize = 30;
 
         }
 

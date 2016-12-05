@@ -46,6 +46,18 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void grid1_CellClick(object sender, int row, int column)
+        {
+            int number = 0;
+            Random r = new Random();
+            number = r.Next(0, 4);
+            while (number == grid1[row, column])
+                number = r.Next(0, 4);
+            grid1.SetCell(row, column, number);
+            //Console.WriteLine("{0},{1} -> {2}", row, column, number);
+            //grid1[row, column] = r.Next(1, 400);
+            //grid1.Invalidate();
+        }
 
     }
 }
