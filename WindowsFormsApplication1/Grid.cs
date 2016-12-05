@@ -25,7 +25,12 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             data = new int[1000, 1000];
             rows = 5; cols = 3; cellSize = 30;
-
+            Colors = new Color[5];
+            Colors[0] = Color.Purple;
+            Colors[1] = Color.OrangeRed;
+            Colors[2] = Color.SeaShell;
+            Colors[3] = Color.DeepSkyBlue;
+            Colors[4] = Color.BlueViolet;
         }
 
         //public Color LineColor { get; set; }
