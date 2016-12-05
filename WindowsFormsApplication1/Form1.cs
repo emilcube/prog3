@@ -15,6 +15,9 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+            comboBox1.Items.Add(Grid.GridDisplayMode.Colors);
+            comboBox1.Items.Add(Grid.GridDisplayMode.Numbers);
+            comboBox1.Items.Add(Grid.GridDisplayMode.NumberAndColors);
         }
 
         private void MYEVENTHANDLER(object sender, EventArgs e)
@@ -57,6 +60,12 @@ namespace WindowsFormsApplication1
             //Console.WriteLine("{0},{1} -> {2}", row, column, number);
             //grid1[row, column] = r.Next(1, 400);
             //grid1.Invalidate();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            grid1.DisplayMode = (Grid.GridDisplayMode)comboBox1.SelectedItem;
+            grid1.Invalidate();
         }
 
     }
