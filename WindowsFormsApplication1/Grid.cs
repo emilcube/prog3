@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         Pen p = new Pen(Color.Red, 3);
         int[,] data;
         int rows, cols, cellSize;
-        public enum GridDisplayMode { Colors, Numbers, NumberAndColors };
+        public enum GridDisplayMode { Colors, Numbers, NumberAndColors};
         public GridDisplayMode DisplayMode { get; set; }
         public Color[] Colors { get; set; }
 
@@ -53,6 +53,7 @@ namespace WindowsFormsApplication1
 
             switch (DisplayMode)
             {
+
                 case GridDisplayMode.Colors:
                     {
                         for (int i = 1; i < cols + 1; i++)
