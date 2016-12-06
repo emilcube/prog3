@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
             comboBox1.Items.Add(Grid.GridDisplayMode.Colors);
             comboBox1.Items.Add(Grid.GridDisplayMode.Numbers);
             comboBox1.Items.Add(Grid.GridDisplayMode.NumberAndColors);
+            comboBox1.Items.Add(Grid.GridDisplayMode.Image);
         }
 
         private void MYEVENTHANDLER(object sender, EventArgs e)
