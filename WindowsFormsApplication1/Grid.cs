@@ -58,20 +58,11 @@ namespace WindowsFormsApplication1
                         for (int i = 1; i < cols + 1; i++)
                             for (int j = 0; j < rows + 1; j++)
                             {
-                                //g.DrawString
-                                //(
-                                //    Convert.ToString(data[i, j]),
-                                //    Font, // шрифт, выбранный в дизайнере
-                                //    Brushes.Black, // цвет цифр
-                                //    i * cellSize + p.Width / 4 - 3 * cellSize / 4,
-                                //    j * cellSize - p.Width - 3 * cellSize / 4 // координаты надписи
-                                //);
                                 if (data[i, j] > 0)
                                 {
                                     Image img = Image.FromFile("jj.jpg");
                                     g.DrawImage(img, (i - 1) * cellSize, (j - 1) * cellSize);
                                     //System.Threading.Thread.Sleep(10);
-                                    data[i, j] = 0;
                                 }
                                 else
                                     g.FillRectangle
@@ -82,8 +73,6 @@ namespace WindowsFormsApplication1
                                      cellSize,
                                      cellSize
                                  );
-
-
                             }
                         break;
                     }
@@ -93,19 +82,9 @@ namespace WindowsFormsApplication1
                         for (int i = 1; i < cols + 1; i++)
                             for (int j = 0; j < rows + 1; j++)
                             {
-                                if (data[i, j] < 4)
                                     g.FillRectangle
                                 (
                                     new SolidBrush(Colors[data[i, j]]),
-                                    (i - 1) * cellSize,
-                                    (j - 1) * cellSize, // координаты надписи
-                                    cellSize,
-                                    cellSize
-                                );
-                                else
-                                    g.FillRectangle
-                                (
-                                    new SolidBrush(Color.White),
                                     (i - 1) * cellSize,
                                     (j - 1) * cellSize, // координаты надписи
                                     cellSize,
@@ -138,19 +117,9 @@ namespace WindowsFormsApplication1
                             for (int j = 0; j < rows + 1; j++)
                             {
                                 {
-                                    if (data[i, j] < 4)
                                         g.FillRectangle
                                     (
                                         new SolidBrush(Colors[data[i, j]]),
-                                        (i - 1) * cellSize,
-                                        (j - 1) * cellSize, // координаты надписи
-                                        cellSize,
-                                        cellSize
-                                    );
-                                    else
-                                        g.FillRectangle
-                                    (
-                                        new SolidBrush(Color.White),
                                         (i - 1) * cellSize,
                                         (j - 1) * cellSize, // координаты надписи
                                         cellSize,
