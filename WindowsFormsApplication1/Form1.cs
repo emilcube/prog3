@@ -41,8 +41,8 @@ namespace WindowsFormsApplication1
             redButton1.Crossed ^= true;
             int number;
             Random r = new Random();
-            number = r.Next(0, 4);
-            grid1[r.Next(1, grid1.ColsCount + 1), r.Next(1, grid1.RowsCount + 1)] = number;
+            number = r.Next(0, 5);
+            grid1[r.Next(1, grid1.ColsCount+1), r.Next(1, grid1.RowsCount)+1] = number;
         }
 
         private void grid1_Click(object sender, EventArgs e)
@@ -54,13 +54,8 @@ namespace WindowsFormsApplication1
         {
             int number = 0;
             Random r = new Random();
-            number = r.Next(0, 4);
-            while (number == grid1[row, column])
-                number = r.Next(0, 4);
+            number = r.Next(0, 5);
             grid1.SetCell(row, column, number);
-            //Console.WriteLine("{0},{1} -> {2}", row, column, number);
-            //grid1[row, column] = r.Next(1, 400);
-            //grid1.Invalidate();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
